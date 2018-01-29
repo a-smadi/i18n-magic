@@ -1,6 +1,38 @@
 # !/usr/bin/env ruby
 
-require 'i18n/magic'
+require 'i18n/magic/version'
+require 'optparse'
 
-tester = I18n::Magic::Tester.new
-tester.test
+options = {}
+
+opt_parser = OptionParser.new do |opt|
+  opt.banner = "Usage:"
+  opt.separator  "  i18n-magic [command] [options]"
+  opt.separator  ""
+
+  opt.separator  "Options:"
+  opt.on("-h", "--help", "# Show this help message and quit") do
+    puts opt_parser
+    exit(true)
+  end
+
+  opt.separator  ""
+
+  opt.on("-v", "--version", "# Show i18n-magic version number and quit") do
+    puts I18n::Magic::VERSION
+    exit(true)
+  end
+  opt.separator  "Commands:"
+  opt.separator  "  add                                # add a new translation"
+  opt.separator  ""
+end
+
+opt_parser.parse!
+
+case ARGV[0]
+when 'add'
+  puts "will add a new translation"
+
+else
+  puts opt_parser
+end
