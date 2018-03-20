@@ -13,7 +13,7 @@ Easy localization management for Ruby projects that are using the i18n gem.
 ## Installation
 
 ```ruby
-gem `i18n-magic`
+gem 'i18n-magic'
 ```
 
 And then execute:
@@ -30,7 +30,7 @@ You can run tests using `rake` or `rake spec`
 
 ## Usage
 
-TODO: Write usage instructions here
+This section will be updated as features roll out.
 
 ## Contributing
 
