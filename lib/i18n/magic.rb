@@ -56,19 +56,19 @@ module I18n
       end
 
       def add
-        puts 'will add a new translation'
+        puts 'under development'
       end
 
       def server
-        puts 'will start the server'
+        puts 'under development'
       end
 
       def format
-        puts 'will format files'
+        puts 'under development'
       end
 
       def config
-        puts 'will configure i18n-magic'
+        puts 'under development'
       end
     end
   end
