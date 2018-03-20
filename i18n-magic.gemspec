@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["alielsmadi@gmail.com"]
 
   spec.summary       = %q{a gem to better manage i18n translation files.}
-  spec.description   = %q{easy localization management for Ruby projects using the i18n gem.}
+  spec.description   = %q{easy localization management for Ruby projects that are using the i18n gem.}
   spec.homepage      = "https://github.com/a-smadi/i18n-magic"
   spec.license       = "MIT"
 
