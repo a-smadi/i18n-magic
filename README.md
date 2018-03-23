@@ -1,6 +1,7 @@
 # I18n::Magic
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/479e81db41acc3f00d92/maintainability)](https://codeclimate.com/github/a-smadi/i18n-magic/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/479e81db41acc3f00d92/test_coverage)](https://codeclimate.com/github/a-smadi/i18n-magic/test_coverage)
 [![Build Status](https://travis-ci.org/a-smadi/i18n-magic.svg?branch=master)](https://travis-ci.org/a-smadi/i18n-magic)
 
 Easy localization management for Ruby projects that are using the i18n gem.
