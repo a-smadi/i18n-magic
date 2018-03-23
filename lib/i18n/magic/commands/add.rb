@@ -1,6 +1,7 @@
 require_relative '../base_command'
 require_relative '../entity/translation_file'
 require_relative '../entity/translation_record'
+require_relative '../helpers/environment'
 
 module I18n::Magic::Commands
   class Add < I18n::Magic::BaseCommand
@@ -17,7 +18,7 @@ module I18n::Magic::Commands
     private
 
     def add_values_from_input
-      %w[EN AR].each do |locale|
+      I18n::Magic::Helpers::Environment.locales.each do |locale|
         print "#{locale} for #{@options[:key]} (empty to add skip) : "
         value = STDIN.gets
 
