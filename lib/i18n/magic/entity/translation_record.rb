@@ -15,7 +15,7 @@ module I18n::Magic::Entity
       @key.present? && @value.present? && !@key.empty? && !@value.empty?
     end
 
-    def as_row
+    def as_string_row
       "  #{@key}: #{@value}"
     end
 
