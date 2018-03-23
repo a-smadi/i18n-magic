@@ -1,5 +1,5 @@
 module I18n
   module Magic
-    VERSION = "0.2.0"
+    VERSION = '0.0.1alpha'.freeze
   end
 end
