@@ -4,6 +4,8 @@ module I18n
   module Magic
     module Entity
       class Alphabet
+        attr_reader :letters
+
         def initialize
           @letters = %w[]
         end
