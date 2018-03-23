@@ -8,10 +8,10 @@ module I18n::Magic::Commands
   class Add < I18n::Magic::BaseCommand
     def execute
       abort('missing key operand') unless @options[:key].present?
-      if @options[:value1].nil?
-        add_values_from_input
-      else
+      if @options[:values].size.positive?
         add_values_from_args
+      else
+        add_values_from_input
       end
     end
 
@@ -30,7 +30,7 @@ module I18n::Magic::Commands
     end
 
     def add_values_from_args
-      [@options[:value1], @options[:value2]].each do |value|
+      @options[:values].each do |value|
         next unless value.present?
         record = I18n::Magic::Entity::TranslationRecord.new(@options[:key], value)
         abort('invalid key,value pair !') unless record.valid?

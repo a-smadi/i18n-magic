@@ -19,5 +19,38 @@ module I18n::Magic::Helpers
       end
       text_locale
     end
+
+    def self.letters_only(text)
+      text.tr('0-9', '')
+          .tr('!', '')
+          .tr('?', '')
+          .tr('@', '')
+          .tr('#', '')
+          .tr('$', '')
+          .tr('%', '')
+          .tr('^', '')
+          .tr('&', '')
+          .tr('*', '')
+          .tr('(', '')
+          .tr(')', '')
+          .tr('[', '')
+          .tr(']', '')
+          .tr('{', '')
+          .tr('}', '')
+          .tr(':', '')
+          .tr(';', '')
+          .tr('\'', '')
+          .tr('"', '')
+          .tr('`', '')
+          .tr('\\', '')
+          .tr('/', '')
+          .tr('<', '')
+          .tr('>', '')
+          .tr('.', '')
+          .tr(',', '')
+          .tr('|', '')
+          .tr(' ', '')
+          .strip.downcase
+    end
   end
 end

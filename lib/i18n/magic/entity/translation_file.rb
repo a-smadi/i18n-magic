@@ -1,5 +1,6 @@
 require_relative '../helpers/string_ops'
 require_relative 'translation_record'
+require_relative 'alphabet'
 
 module I18n::Magic::Entity
   class TranslationFile
@@ -32,7 +33,20 @@ module I18n::Magic::Entity
     end
 
     def compatibility_score(text)
-      0
+      locale_alphabet = I18n::Magic::Entity::Alphabet.new
+      open(@filename, 'r+') do |file|
+        %w[A B C D E F G H I J K L M N O P Q R S T U V W X Y Z].each do |letter|
+          file.seek(0)
+          position = find("# #{letter} #") + 1
+          abort('translation file is not properly formatted !') unless position.positive?
+          position.times { file.readline }
+          sample_text = file.readline
+          next unless sample_text.present? && sample_text.include?(':')
+          sample_text = sample_text[(sample_text.index(':') + 1)..-1].strip
+          locale_alphabet.learn(sample_text)
+        end
+      end
+      locale_alphabet.belonging_score(text)
     end
 
     private

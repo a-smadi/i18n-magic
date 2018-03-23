@@ -1,9 +1,9 @@
 require 'active_support'
 require 'active_support/core_ext'
-require_relative 'magic/version'
 require 'optparse'
 
 require_relative 'magic/commands/add'
+require_relative 'magic/version'
 
 module I18n
   module Magic
@@ -63,7 +63,7 @@ module I18n
       end
 
       def add
-        I18n::Magic::Commands::Add.new(key: @args[1], value1: @args[2], value2: @args[3]).execute
+        I18n::Magic::Commands::Add.new(key: @args[1], values: @args[2..-1]).execute
       end
 
       def server
