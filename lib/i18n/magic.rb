@@ -1,10 +1,17 @@
-require 'i18n/magic/version'
+require 'active_support'
+require 'active_support/core_ext'
+require_relative 'magic/version'
 require 'optparse'
+
+require_relative 'magic/commands/add'
 
 module I18n
   module Magic
     class CommandHandler
+      UNDER_DEV_MSG = 'This feature is under development..'.freeze
+
       def initialize(args)
+        @args = args
         @opt_parser = OptionParser.new do |opt|
           opt.banner = 'Usage:'
           opt.separator '  i18n-magic [command] [options]'
@@ -56,19 +63,19 @@ module I18n
       end
 
       def add
-        puts 'under development'
+        I18n::Magic::Commands::Add.new(key: @args[1], value1: @args[2], value2: @args[3]).execute
       end
 
       def server
-        puts 'under development'
+        puts UNDER_DEV_MSG
       end
 
       def format
-        puts 'under development'
+        puts UNDER_DEV_MSG
       end
 
       def config
-        puts 'under development'
+        puts UNDER_DEV_MSG
       end
     end
   end
