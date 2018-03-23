@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    i18n-magic (0.2.0)
+    i18n-magic (0.0.1alpha)
 
 GEM
   remote: https://rubygems.org/
