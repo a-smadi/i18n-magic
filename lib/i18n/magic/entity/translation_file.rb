@@ -5,6 +5,7 @@ require_relative 'alphabet'
 module I18n::Magic::Entity
   class TranslationFile
     def initialize(locale)
+      @locale   = locale
       @filename = "config/locales/#{locale.downcase}.yml"
     end
 
@@ -14,6 +15,10 @@ module I18n::Magic::Entity
 
     def add(record)
       open(@filename, 'r+') do |file|
+        if find("  #{record.key}:").positive?
+          puts "this key already exists for :#{@locale}"
+          break
+        end
         position = find("# #{record.key.slice(0).upcase} #") + 1
         abort('translation file is not properly formatted !') unless position.positive?
         position.times { file.readline }
