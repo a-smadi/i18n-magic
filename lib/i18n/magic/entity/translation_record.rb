@@ -4,7 +4,7 @@ module I18n
   module Magic
     module Entity
       class TranslationRecord
-        attr_accessor :key, :value
+        attr_reader :key, :value
 
         def initialize(key, value)
           @key = key
