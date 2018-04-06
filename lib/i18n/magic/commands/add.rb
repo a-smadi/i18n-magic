@@ -21,7 +21,7 @@ module I18n
 
         def add_values_from_input
           I18n::Magic::Helpers::Environment.locales.each do |locale|
-            print "#{locale} for #{@options[:key]} (empty to add skip) : "
+            print "#{locale} value for #{@options[:key]} (empty to skip) : "
             value = STDIN.gets
             record = I18n::Magic::Entity::TranslationRecord.new(@options[:key], value)
             next unless record.valid?
