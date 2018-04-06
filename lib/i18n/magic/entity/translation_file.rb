@@ -40,6 +40,14 @@ module I18n
         end
 
         def compatibility_score(text)
+          locale_alphabet = I18n::Magic::Entity::Alphabet.new(@locale)
+          locale_alphabet = learned_alphabet unless locale_alphabet.letters.any?
+          locale_alphabet.belonging_score(text)
+        end
+
+        private
+
+        def learned_alphabet
           locale_alphabet = I18n::Magic::Entity::Alphabet.new
           open(@filename, 'r+') do |file|
             %w[A B C D E F G H I J K L M N O P Q R S T U V W X Y Z].each do |letter|
@@ -53,10 +61,8 @@ module I18n
               locale_alphabet.learn(sample_text)
             end
           end
-          locale_alphabet.belonging_score(text)
+          locale_alphabet
         end
-
-        private
 
         def find(keyword)
           count = 0
