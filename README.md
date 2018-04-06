@@ -60,7 +60,7 @@ are both acceptable.
 ```
 i18n-magic add hello_world "Hello, World!" "مرحبا"
 ```
-PS: precednece of values doesn't have any effect. As long as the key comes first, i18n-magic will automatically recognise the translation value locales, so
+PS: precednece of values doesn't have any effect. As long as the key comes first, i18n-magic will automatically recognise the translation values locales, so
 ```
 i18n-magic add hello_world "مرحبا" "Hello, World!"
 ```
