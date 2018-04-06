@@ -9,8 +9,8 @@ RSpec.describe I18n::Magic::Helpers::StringOps do
 
   describe '#letters_only' do
     it 'returns a string containing letters only, when called with a string that has mixed charactes' do
-      my_string = 'hello there, my name is jon doe!!'
-      letters_only_string = 'hellotheremynameisjondoe'
+      my_string = 'Hello` there*, my /name\ is: #{JON} "DOE"!!. (How) are \'you\' [doing] $today ? & my %email is <j@doe.me>'
+      letters_only_string = 'hellotheremynameisjondoehowareyoudoingtodaymyemailisjdoeme'
       expect(I18n::Magic::Helpers::StringOps.letters_only(my_string)).to eq(letters_only_string)
     end
   end
