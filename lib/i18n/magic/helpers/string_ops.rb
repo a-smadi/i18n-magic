@@ -23,7 +23,7 @@ module I18n
         end
 
         def self.letters_only(text)
-          text.gsub(/[0-9]|\W|\^|\[|\]|\\|\||\/|[!?.,@#$%&*(){}:'"`<>]/, '').strip.downcase
+          text.gsub(/[0-9]|\^|\[|\]|\\|\||\/|[ !?.,@#$%&*(){}:'"`<>]/, '').strip.downcase
         end
       end
     end
