@@ -2,7 +2,7 @@ RSpec.describe I18n::Magic::BaseCommand do
   let(:base_command) { I18n::Magic::BaseCommand.new }
 
   describe 'attribute readers' do
-    it 'should provide read to :letters' do
+    it 'should provide read to :options' do
       expect(base_command).to respond_to(:options)
     end
   end
