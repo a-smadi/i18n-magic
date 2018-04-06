@@ -63,7 +63,7 @@ module I18n
       end
 
       def add
-        I18n::Magic::Commands::Add.new(key: @args[1], values: @args[2..-1]).execute
+        I18n::Magic::Commands::Add.new(key: @args[1], values: @args[2..-1], locale_files_path: I18n::Magic::Helpers::Environment::LOCALE_FILES_PATH).execute
       end
 
       def server

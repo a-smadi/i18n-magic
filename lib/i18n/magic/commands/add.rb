@@ -20,12 +20,12 @@ module I18n
         private
 
         def add_values_from_input
-          I18n::Magic::Helpers::Environment.locales.each do |locale|
+          I18n::Magic::Helpers::Environment.locales(@options[:locale_files_path]).each do |locale|
             print "#{locale} value for #{@options[:key]} (empty to skip) : "
             value = STDIN.gets
             record = I18n::Magic::Entity::TranslationRecord.new(@options[:key], value)
             next unless record.valid?
-            translation_file = I18n::Magic::Entity::TranslationFile.new(locale)
+            translation_file = I18n::Magic::Entity::TranslationFile.new(locale, @options[:locale_files_path])
             abort('translation file does not exist !') unless translation_file.exists?
             translation_file.add(record)
           end
@@ -36,8 +36,8 @@ module I18n
             next unless value.present?
             record = I18n::Magic::Entity::TranslationRecord.new(@options[:key], value)
             abort('invalid key,value pair !') unless record.valid?
-            locale = I18n::Magic::Helpers::StringOps.locale(value)
-            translation_file = I18n::Magic::Entity::TranslationFile.new(locale)
+            locale = I18n::Magic::Helpers::StringOps.locale(value, @options[:locale_files_path])
+            translation_file = I18n::Magic::Entity::TranslationFile.new(locale, @options[:locale_files_path])
             abort('translation file does not exist !') unless translation_file.exists?
             translation_file.add(record)
           end
