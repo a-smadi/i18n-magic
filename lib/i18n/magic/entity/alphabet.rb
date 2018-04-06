@@ -9,9 +9,9 @@ module I18n
         EN_LETTERS = %w[a b c d e f g h i j k l m n o p q r s t u v w x y z].freeze
         AR_LETTERS = %w[ا ب ج د ه و ز ح ط ي ك ل لا م ن س ع ف ص ق ر ش ت ث خ ذ ض ظ غ].freeze
         RU_LETTERS = %w[а б в г д е ё ж з и й к л м н о п р с т у ф х ц ч ш щ ъ ыь э ю я і ѳ ѣ ѵ ѕ ѯ ѱ ѡ ѫ ѧ ѭ ѩ Ѩ Ѭ Ѧ Ѫ Ѡ Ѱ Ѯ Ѕ Ѵ Ѣ Ѳ І Я Ю Э Ь Ы Ъ Щ Ш Ч Ц Х Ф У П Л Й И З Ж Ё Д Г Б].freeze
-        DE_LETTERS = %w[a b c d e f g h i j k l m n o p q r s t u v w x y z ä ö ü Ä Ö Ü ß].freeze
-        FR_LETTERS = %w[a b c d e f g h i j k l m n o p q r s t u v w x y z é è ç ë ò ô ö ù à â].freeze
-        ES_LETTERS = %w[a b c d e é f g h i í j k l m n ñ o ó p q r s t u ú v w x y z].freeze
+        DE_LETTERS = EN_LETTERS + %w[ä ö ü Ä Ö Ü ß].freeze
+        FR_LETTERS = EN_LETTERS + %w[é è ç ë ò ô ö ù à â].freeze
+        ES_LETTERS = EN_LETTERS + %w[é í ñ ó ú].freeze
         HE_LETTERS = %w[א בּ ב ג ד ה ו ז ח ט י כּ כ ךּ ך ל מ ם נ ן ס ע פּ פ ף צ ץ ק ר שׁ שׂ תּ ת].freeze
         ZH_LETTERS = %w[ㄅ ㄆ ㄇ ㄈ ㄉ ㄊ ㄋ ㄌ ㄍ ㄎ ㄏ ㄐ ㄑ ㄒ ㄓ ㄔ ㄕ ㄖ ㄗ ㄘ ㄙ ㄚ ㄛ ㄜ ㄝ ㄞ ㄟ ㄠ ㄡ ㄢ ㄣ ㄤ ㄥ ㄦ ㄧ ㄨ ㄩ ㄭ].freeze
         JA_LETTERS = %w[あ い う え お か き く け こ が ぎ ぐ げ ご さ し す せ そ ざ じ ず ぜ ぞ た ち つ て と だ ぢ づ で ど な に ぬ ね の は ひ ふ へ ほ ば び ぶ べ ぼ ぱ ぴ ぷ ぺ ぽ ま み む め も や ゆ よ ら り る れ ろ わ を ん].freeze

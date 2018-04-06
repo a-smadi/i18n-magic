@@ -11,7 +11,7 @@ RSpec.describe I18n::Magic::Entity::Alphabet do
     it 'should add unique letters to its letters attribute from the provided strings, with disregard to non-letter characters' do
       alphabet.learn('The, quick    broWn@ fox?!...')
       alphabet.learn('...jumps #over @the $Lazy Dog')
-      expect(alphabet.letters).to match_array(%w[a b c d e f g h i j k l m n o p q r s t u v w x y z])
+      expect(alphabet.letters).to match_array(I18n::Magic::Entity::Alphabet::EN_LETTERS)
     end
   end
 
@@ -40,43 +40,43 @@ RSpec.describe I18n::Magic::Entity::Alphabet do
     let(:tr_alphabet) { I18n::Magic::Entity::Alphabet.new('TR') }
 
     it 'should know the letters in the EN alphabet' do
-      expect(en_alphabet.letters).to match_array(%w[a b c d e f g h i j k l m n o p q r s t u v w x y z])
+      expect(en_alphabet.letters).to match_array(I18n::Magic::Entity::Alphabet::EN_LETTERS)
     end
 
     it 'should know the letters in the AR alphabet' do
-      expect(ar_alphabet.letters).to match_array(%w[ا ب ج د ه و ز ح ط ي ك ل لا م ن س ع ف ص ق ر ش ت ث خ ذ ض ظ غ])
+      expect(ar_alphabet.letters).to match_array(I18n::Magic::Entity::Alphabet::AR_LETTERS)
     end
 
     it 'should know the letters in the RU alphabet' do
-      expect(ru_alphabet.letters).to match_array(%w[а б в г д е ё ж з и й к л м н о п р с т у ф х ц ч ш щ ъ ыь э ю я і ѳ ѣ ѵ ѕ ѯ ѱ ѡ ѫ ѧ ѭ ѩ Ѩ Ѭ Ѧ Ѫ Ѡ Ѱ Ѯ Ѕ Ѵ Ѣ Ѳ І Я Ю Э Ь Ы Ъ Щ Ш Ч Ц Х Ф У П Л Й И З Ж Ё Д Г Б])
+      expect(ru_alphabet.letters).to match_array(I18n::Magic::Entity::Alphabet::RU_LETTERS)
     end
 
     it 'should know the letters in the DE alphabet' do
-      expect(de_alphabet.letters).to match_array(%w[a b c d e f g h i j k l m n o p q r s t u v w x y z ä ö ü Ä Ö Ü ß])
+      expect(de_alphabet.letters).to match_array(I18n::Magic::Entity::Alphabet::DE_LETTERS)
     end
 
     it 'should know the letters in the FR alphabet' do
-      expect(fr_alphabet.letters).to match_array(%w[a b c d e f g h i j k l m n o p q r s t u v w x y z é è ç ë ò ô ö ù à â])
+      expect(fr_alphabet.letters).to match_array(I18n::Magic::Entity::Alphabet::FR_LETTERS)
     end
 
     it 'should know the letters in the ES alphabet' do
-      expect(es_alphabet.letters).to match_array(%w[a b c d e é f g h i í j k l m n ñ o ó p q r s t u ú v w x y z])
+      expect(es_alphabet.letters).to match_array(I18n::Magic::Entity::Alphabet::ES_LETTERS)
     end
 
     it 'should know the letters in the HE alphabet' do
-      expect(he_alphabet.letters).to match_array(%w[א בּ ב ג ד ה ו ז ח ט י כּ כ ךּ ך ל מ ם נ ן ס ע פּ פ ף צ ץ ק ר שׁ שׂ תּ ת])
+      expect(he_alphabet.letters).to match_array(I18n::Magic::Entity::Alphabet::HE_LETTERS)
     end
 
     it 'should know the letters in the ZH alphabet' do
-      expect(zh_alphabet.letters).to match_array(%w[ㄅ ㄆ ㄇ ㄈ ㄉ ㄊ ㄋ ㄌ ㄍ ㄎ ㄏ ㄐ ㄑ ㄒ ㄓ ㄔ ㄕ ㄖ ㄗ ㄘ ㄙ ㄚ ㄛ ㄜ ㄝ ㄞ ㄟ ㄠ ㄡ ㄢ ㄣ ㄤ ㄥ ㄦ ㄧ ㄨ ㄩ ㄭ])
+      expect(zh_alphabet.letters).to match_array(I18n::Magic::Entity::Alphabet::ZH_LETTERS)
     end
 
     it 'should know the letters in the JA alphabet' do
-      expect(ja_alphabet.letters).to match_array(%w[あ い う え お か き く け こ が ぎ ぐ げ ご さ し す せ そ ざ じ ず ぜ ぞ た ち つ て と だ ぢ づ で ど な に ぬ ね の は ひ ふ へ ほ ば び ぶ べ ぼ ぱ ぴ ぷ ぺ ぽ ま み む め も や ゆ よ ら り る れ ろ わ を ん])
+      expect(ja_alphabet.letters).to match_array(I18n::Magic::Entity::Alphabet::JA_LETTERS)
     end
 
     it 'should know the letters in the TR alphabet' do
-      expect(tr_alphabet.letters).to match_array(%w[a b c ç d e f g ğ h ı i j k l m n o ö p r s ş t u ü v y z Ü Ş Ö Ğ Ç])
+      expect(tr_alphabet.letters).to match_array(I18n::Magic::Entity::Alphabet::TR_LETTERS)
     end
   end
 end

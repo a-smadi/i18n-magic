@@ -50,9 +50,9 @@ module I18n
         def learned_alphabet
           locale_alphabet = I18n::Magic::Entity::Alphabet.new
           open(@filename, 'r+') do |file|
-            %w[A B C D E F G H I J K L M N O P Q R S T U V W X Y Z].each do |letter|
+            I18n::Magic::Entity::Alphabet::EN_LETTERS.each do |letter|
               file.seek(0)
-              position = find("# #{letter} #") + 1
+              position = find("# #{letter.upcase} #") + 1
               abort('translation file is not properly formatted !') unless position.positive?
               position.times { file.readline }
               sample_text = file.readline
