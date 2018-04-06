@@ -21,6 +21,9 @@ RSpec.describe I18n::Magic::Entity::Alphabet do
       expect(alphabet.belonging_score('Hello, Mankind !')).to eq(0)
       expect(alphabet.belonging_score('你好，世界')).to eq(0)
       expect(alphabet.belonging_score('программист')).to eq(100)
+      ja_alphabet = I18n::Magic::Entity::Alphabet.new('JA')
+      expect(ja_alphabet.belonging_score('hey! whatsup?')).to eq(0)
+      expect(ja_alphabet.belonging_score('されるほど')).to eq(100)
     end
   end
 
