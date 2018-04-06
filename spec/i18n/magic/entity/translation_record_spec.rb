@@ -17,7 +17,7 @@ RSpec.describe I18n::Magic::Entity::TranslationRecord do
       expect(translation_record.key).to eq('hello_world')
     end
 
-    it 'should enclose the value with single quates, if it includes a variable' do
+    it 'should enclose the value with single quotes, if it includes a variable' do
       expect(translation_record.value).to eq("'Hello World! My name is %{name}'")
     end
   end

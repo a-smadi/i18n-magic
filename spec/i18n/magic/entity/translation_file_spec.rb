@@ -27,14 +27,14 @@ RSpec.describe I18n::Magic::Entity::TranslationFile do
       file = File.open(en_file_path, 'r')
       expect { translation_file.add(translation_record_for_existing_key)
                file = File.open(en_file_path, 'r')
-      }.to change { file.readlines.size }.by (0)
+      }.to change { file.readlines.size }.by 0
     end
 
     it 'should add a translation to the file for a non-existing key' do
       file = File.open(en_file_path, 'r')
       expect { translation_file.add(translation_record)
                file = File.open(en_file_path, 'r')
-      }.to change { file.readlines.size }.by (1)
+      }.to change { file.readlines.size }.by 1
     end
   end
 
