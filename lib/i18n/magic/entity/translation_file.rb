@@ -6,9 +6,9 @@ module I18n
   module Magic
     module Entity
       class TranslationFile
-        def initialize(locale)
+        def initialize(locale, locale_files_path = I18n::Magic::Helpers::Environment::LOCALE_FILES_PATH)
           @locale   = locale
-          @filename = "config/locales/#{locale.downcase}.yml"
+          @filename = "#{locale_files_path}#{locale.downcase}.yml"
         end
 
         def exists?
