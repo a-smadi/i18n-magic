@@ -9,6 +9,13 @@ module I18n
   module Magic
     class CommandHandler
       UNDER_DEV_MSG = 'This feature is under development..'.freeze
+      CMD_LIST = "\n" \
+                 "Commands:\n" \
+                 "  add                                # add a new translation\n" \
+                 "  server                             # start a mini server to handle missing translations form a web browser\n" \
+                 "  format                             # format all translation files for best usage results\n" \
+                 "  config                             # configure i18n-magic\n" \
+                 "\n".freeze
 
       def initialize(args)
         @args = args
@@ -30,13 +37,7 @@ module I18n
             exit(true)
           end
 
-          opt.separator ''
-          opt.separator 'Commands:'
-          opt.separator '  add                                # add a new translation'
-          opt.separator '  server                             # start a mini server to handle missing translations form a web browser'
-          opt.separator '  format                             # format all translation files for best usage results'
-          opt.separator '  config                             # configure i18n-magic'
-          opt.separator ''
+          opt.separator CMD_LIST
         end
 
         begin
