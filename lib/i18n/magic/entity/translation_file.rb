@@ -2,6 +2,8 @@ require_relative '../helpers/string_ops'
 require_relative 'translation_record'
 require_relative 'alphabet'
 
+# TODO: work with translation files in a smarter way, using indentations and namespaces as indicators
+
 module I18n
   module Magic
     module Entity

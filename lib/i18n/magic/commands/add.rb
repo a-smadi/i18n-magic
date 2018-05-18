@@ -4,6 +4,8 @@ require_relative '../entity/translation_record'
 require_relative '../helpers/environment'
 require_relative '../helpers/string_ops'
 
+# TODO: enhance efficiency of learning alphabets from files (currently being learned from all files once per value)
+
 module I18n
   module Magic
     module Commands
